@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introduction
+title: introduction
 date: 2017-11-19
 ---
 
