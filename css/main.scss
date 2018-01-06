@@ -1,0 +1,253 @@
+---
+---
+
+/* -------------------- TAG DECLARATION -------------------- */
+body {
+	margin: 0;
+	color: #333;
+	background: #f5f5f5!important;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+input, button {
+	border-radius: 3px;
+}
+
+
+/* -------------------- MIXIN DECLARATION -------------------- */
+
+@mixin dp($display) { display: $display; }
+
+@mixin pull($float) { float: $float; }
+@mixin center { margin-left: auto; margin-right: auto; }
+
+@mixin po($position) { position: $position; }
+
+@mixin ma($ma) { margin: $ma; }
+@mixin ml($ml) { margin-left: $ml; }
+@mixin mr($mr) { margin-right: $mr; }
+@mixin mt($mt) { margin-top: $mt; }
+@mixin mb($mb) { margin-bottom: $mb; }
+@mixin mx($mx) { @include ml($mx); @include mr($mx); }
+@mixin my($my) { @include mt($my); @include mb($my); }
+
+@mixin pa($pa) { padding: $pa; }
+@mixin pl($pl) { padding-left: $pl; }
+@mixin pr($pr) { padding-right: $pr; }
+@mixin pt($pt) { padding-top: $pt; }
+@mixin pb($pb) { padding-bottom: $pb; }
+@mixin px($px) { @include pl($px); @include pr($px); }
+@mixin py($py) { @include pt($py); @include pb($py); }
+
+@mixin bg($color) { background-color: $color; }
+
+@mixin border($size, $color, $style: solid) { border: $size $style $color; }
+
+@mixin font($size) { font-size: $size; }
+@mixin text($align) { text-align: $align; }
+
+@mixin clear { @include dp(block); content: ''; clear: both; }
+
+@mixin transition($type, $duration, $option:ease) {
+	transition: $type $duration $option; 
+	-o-transition: $type $duration $option;
+	-ms-transition: $type $duration $option;
+	-moz-transition: $type $duration $option;
+	-webkit-transition: $type $duration $option; 
+}
+
+@mixin transform($transform) {
+	transform: $transform; 
+	-o-transform: $transform;
+	-ms-transform: $transform;
+	-moz-transform: $transform;
+	-webkit-transform: $transform; 
+}
+/* -------------------- VARIABLES -------------------- */
+
+$border: #dee1e7;
+
+/* -------------------- CLASS DECLARATION -------------------- */
+.text-center { text-align: center; }
+
+
+nav {
+	@include bg(#333);
+	@include py(3rem);
+	@include px(1rem);
+	@include pull(left);
+	@include po(fixed);
+	top: 0;
+	bottom: 0;
+	width: 200px;
+	height: 100vh;
+	color: white;
+
+	.profile {
+		@include text(center);
+
+		img {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+		}
+	}
+		
+	ul {
+
+		li a {
+			color: white;
+
+			&:hover {
+				color: white;
+			}
+		}
+		
+		&.menu li {
+			@include mt(1rem);
+
+			&:first-child {
+				@include mt(2rem);	
+			}
+		}
+
+		&.contact {
+			@include text(center);
+			@include po(absolute);
+			bottom: 3rem;
+			width: calc(100% - 2rem);
+			width: -webkit-calc(100% - 2rem);
+			
+			h4 {
+				@include po(relative);
+
+				&:before, &:after {
+					@include dp(block);
+					@include po(absolute);
+					content: "";
+				    height: 2px;
+				    width: -webkit-calc(50% - 48px);
+				    width: calc(50% - 48px);
+				    -webkit-transform: translateY(-50%);
+				    -ms-transform: translateY(-50%);
+				    transform: translateY(-50%);
+				    top: 50%;
+				    background-color: white;
+				}
+
+				&:before {
+					left: 0;
+				}
+
+				&:after {
+					right: 0;
+				}
+			}
+
+			li {
+				@include mx(0.2rem);
+				@include dp(inline-block);
+
+				& a i.icon:hover {
+					@include transform(scale(1.5));
+					@include transition(transform, 0.2s, ease);
+
+					color: white;
+				}
+			}
+
+			&:after {
+				@include clear;
+			}
+		}
+	}
+}
+
+.container {
+	@include pull(left);
+	@include pl(200px);
+	width: 100%;
+
+	.post-wrapper {
+		@include pa(2rem);
+		
+		.post {
+			@include pa(2rem);
+			@include mb(2rem);
+			@include bg(white);
+			@include border(1px, $border);
+
+			border-radius: 5px;
+			box-shadow: 0 0px 1px rgba(31, 35, 46, 0.1);
+
+			&:hover {
+				cursor: pointer;
+
+    			animation: post-list 0.3s ;
+    			-webkit-animation: post-list 0.3s ; /* Chrome, Safari, Opera */
+    			animation-fill-mode: forwards;
+    			-webkit-animation-fill-mode: forwards;
+			}
+		}
+	}
+
+	&:after {
+		@include clear;
+	}
+}
+
+blockquote {
+	@include pl(2rem);
+	color: #aaa;
+	font-weight: 200;
+	line-height: 1.8rem;
+}
+
+$grey: #f5f5f5;
+$blue: #00bfff;
+$red: #ef6866;
+@each $type, $color in (grey: $grey, blue: $blue, red: $red) {
+	.blockquote-#{$type} blockquote {
+		border-left: 5px solid $color;
+	}
+
+	.pre-#{$type} {
+		border-left: 5px solid $color;
+
+		span {
+			@include mb(1rem);
+			@include dp(inline-block);
+			font-size: 1.4rem;
+			font-weight: 600;
+		}
+	}
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes post-list {
+    100% {
+    	transform: translatey(-1px);
+    	box-shadow: 0 1px 10px rgba(31, 35, 46, 0.1);
+    }
+}
+
+/* Standard syntax */
+@keyframes post-list {
+    100% {
+    	transform: translatey(-1px);
+    	box-shadow: 0 1px 10px rgba(31, 35, 46, 0.1);
+    }
+}

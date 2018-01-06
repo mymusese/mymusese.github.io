@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<ul class="post-wrapper">
+	{% for post in site.categories.network %}
+    <li class="post" onclick="window.location.href='{{ post.url }}';">
+    	<h1>{{ post.title }}</h1>
+    	<h4 style="font-weight: 400;">{{ post.subtitle }}</h4>
+    	<span>{{ post.date | date: "%Y년 %m월 %d일" }}</span>
+    </li>
+  {% endfor %}
+</ul>
+

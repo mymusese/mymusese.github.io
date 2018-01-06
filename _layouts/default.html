@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html>
-	<header>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 		<title>{{ page.title }}</title>
-	</header>
+
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.9.0/github-markdown.css">
+		<!-- SEMANTIC UI -->
+		<link rel="stylesheet" type="text/css" href="{{ 'semantic/dist/semantic.min.css' | absolute_url }}">
+		<script
+		  src="https://code.jquery.com/jquery-3.1.1.min.js"
+		  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+		  crossorigin="anonymous"></script>
+		<script src="{{ 'semantic/dist/semantic.min.js' | absolute_url }}"></script>
+	</head>
 	<body>
 		<nav>
-			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/about">About</a></li>
-				<li><a href="/blog">Blog</a></li>
+			<div class="profile">
+				<img src="{{ '/img/deedee.jpg' | absolute_url }}" />
+				<h3>DeeDee</h3>
+			</div>
+			<ul class="menu">
+				<li><a href="/blog/react"><i class="sidebar icon"></i>ReactJS</a></li>
+				<li><a href="/blog/html"><i class="sidebar icon"></i>HTML</a></li>
+				<li><a href="/blog/css"><i class="sidebar icon"></i>CSS</a></li>
+				<li><a href="/blog/js"><i class="sidebar icon"></i>JS</a></li>
+				<li><a href="/blog/network"><i class="sidebar icon"></i>NETWORK</a></li>
+			</ul>
+
+			<ul class="contact">
+				<h4 class="text-center">CONTACT</h4>
+				<li><a href="mailto:mymusese@gmail.com" target="_blank"><i class="large mail outline icon"></i></a></li>
+				<li><a href="https://www.facebook.com/soree.choi.7" target="_blank"><i class="large facebook square icon"></i></a></li>
+				<li><a href="https://github.com/mymusese" target="_blank"><i class="large git icon"></i></a></li>
+				<li><a href="https://blog.naver.com/mymusese" target="_blank"><i class="large copy icon"></i></a></li>
 			</ul>
 		</nav>
 		<div class="container">
 			{{ content }}
 		</div>
-		<footer>
-			<ul>
-				<li><a href="mailto:mymusese@gmail.com">email</a></li>
-				<li><a href="https://github.com/mymusese">github.com/mymusese</a></li>
-			</ul>
-		</footer>
 	</body>
 </html>
