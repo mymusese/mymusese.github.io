@@ -82,7 +82,6 @@ $border: #dee1e7;
 /* -------------------- CLASS DECLARATION -------------------- */
 .text-center { text-align: center; }
 
-
 nav {
 	@include bg(#333);
 	@include py(3rem);
@@ -233,8 +232,40 @@ $red: #ef6866;
 			font-weight: 600;
 		}
 	}
+
+	.text-#{$type} {
+		color: $color;
+	}
 }
 
+.text-through {
+	text-decoration: line-through;
+}
+
+figure.highlight {
+	pre { 
+		padding: 0!important;
+		background: #21111b!important; 
+	}
+
+	table {
+		margin-bottom: 0!important;
+		tr, td { 
+			border: none; 
+			background: #21111b!important; 
+		}
+	}
+}
+
+figure>span, span.expl {
+	color: #888;
+	font-weight: 200;
+}
+
+span.expl {
+	font-size: inherit;
+	margin: 1em 40px;
+}
 
 /* Chrome, Safari, Opera */
 @-webkit-keyframes post-list {
