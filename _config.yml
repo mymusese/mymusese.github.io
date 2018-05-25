@@ -4,4 +4,4 @@ markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
 
 future: true
-timezone: TIMEZONE
+timezone: KR
