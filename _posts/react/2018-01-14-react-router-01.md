@@ -25,8 +25,8 @@ test 폴더를 만들고 내부에 4개의 파일 index.html, example1.html, exa
 
 test/index.html 파일을 더블클릭해 브라우저에 띄워보면 아래와 같은 화면을 확인할 수 있습니다.
 <figure id="screen-1">
-    <iframe src="../../../../../iframe/react/react-router-01.html" width="100%"></iframe>
-    <span>[화면1. test/index.html]</span>
+  <iframe src="../../../../../iframe/react/react-router-01.html" width="100%"></iframe>
+  <span>[화면1. test/index.html]</span>
 </figure>
 
 링크를 누르면 각각 example1, example2, example3라는 텍스트가 나타나도록 각 파일에 아래와 같은 코드를 입력하고 저장합니다. 

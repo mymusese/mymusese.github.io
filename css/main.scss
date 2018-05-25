@@ -267,6 +267,11 @@ span.expl {
 	margin: 1em 40px;
 }
 
+p img {
+	margin: 1em 40px;
+	width: calc(100% - 80px);
+}
+
 /* Chrome, Safari, Opera */
 @-webkit-keyframes post-list {
     100% {
