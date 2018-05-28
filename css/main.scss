@@ -217,7 +217,7 @@ blockquote {
 $grey: #f5f5f5;
 $blue: #00bfff;
 $red: #ef6866;
-@each $type, $color in (grey: $grey, blue: $blue, red: $red) {
+@each $type, $color in ('grey': $grey, 'blue': $blue, 'red': $red) {
 	.blockquote-#{$type} blockquote {
 		border-left: 5px solid $color;
 	}
