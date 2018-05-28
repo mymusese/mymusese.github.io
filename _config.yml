@@ -2,7 +2,3 @@ name: Solee Choi
 markdown: kramdown
 
 permalink: /blog/:year/:month/:day/:title
-
-
-future: true
-timezone: KR
