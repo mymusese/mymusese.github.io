@@ -1,4 +1,5 @@
 name: Solee Choi
+title: DeeDee's Tech Blog
 markdown: kramdown
 
 permalink: /blog/:year/:month/:day/:title
